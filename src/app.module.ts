@@ -6,7 +6,7 @@ import { BlogModule } from './blog/blog.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost/nestjs', { useNewUrlParser: true }),
+    MongooseModule.forRoot('mongodb://root:password@localhost:27017/nestjs?authSource=admin', { useNewUrlParser: true }),
     BlogModule
   ],
   controllers: [AppController],

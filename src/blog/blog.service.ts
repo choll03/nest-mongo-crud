@@ -20,19 +20,19 @@ export class BlogService {
     }
 
 
-    async showBlog(postId) : Promise<Post> {
+    async showBlog(postId: string) : Promise<Post> {
         const blog = await this.postModel.findById(postId).exec();
         return blog;
     }
 
 
-    async editBlog(postId, createPostDTO: CreatePostDTO) : Promise<Post> {
+    async editBlog(postId: string, createPostDTO: CreatePostDTO) : Promise<Post> {
         const blog = await this.postModel.findByIdAndUpdate(postId, createPostDTO, { new: true });
         return blog;
     }
 
 
-    async deleteBlog(postId) : Promise<any> {
+    async deleteBlog(postId: string) : Promise<any> {
         const deletedPost = await this.postModel.findByIdAndRemove(postId);
         return deletedPost;
     }
