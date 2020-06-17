@@ -16,7 +16,7 @@ export class BlogService {
 
 
     async getBlog() : Promise<Post[]> {
-        return await this.postModel.find().exec();
+        return await this.postModel.find().limit(2);
     }
 
 
